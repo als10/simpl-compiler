@@ -6,85 +6,85 @@ SIMPL is a simple imperative, language that allows for function and variable def
 
 The grammar for SIMPL is as follow:
 ```
-program	 	=	 	function ...
+program  = function ...
  	 	 	 	 
-function	=	 	(fun (id id ...) (vars [(id int) ...] stmt ...))
+function = (fun (id id ...) (vars [(id int) ...] stmt ...))
  	 	 	 	 
-aexp	 	=	 	(id aexp ...)
-       |   (+ aexp aexp)
-       |	 	(* aexp aexp)
-       |	 	(- aexp aexp)
-       |	 	(div aexp aexp)
-       |	 	(mod aexp aexp)
-       |	 	number
-       |	 	id
+aexp.    = (id aexp ...)
+         | (+ aexp aexp)
+         | (* aexp aexp)
+         | (- aexp aexp)
+         | (div aexp aexp)
+         | (mod aexp aexp)
+         | number
+         | id
  	 	 	 	 
-bexp	 	=	 	(= aexp aexp)
-       |	 	(> aexp aexp)
-       |	 	(< aexp aexp)
-       |	 	(>= aexp aexp)
-       |	 	(<= aexp aexp)
-       |	 	(not bexp)
-       |	 	(and bexp ...)
-       |	 	(or bexp ...)
-       |	 	true
-       |	 	false
+bexp     = (= aexp aexp)
+         | (> aexp aexp)
+         | (< aexp aexp)
+         | (>= aexp aexp)
+         | (<= aexp aexp)
+         | (not bexp)
+         | (and bexp ...)
+         | (or bexp ...)
+         | true
+         | false
 
-stmt	 	=	 	(return aexp)
-       |	 	(print aexp)
-       |	 	(print string)
-       |   (set id aexp)
-       |	 	(seq stmt ...)
-       |   (iif bexp stmt stmt)
-       |   (skip)
-       |	 	(while bexp stmt ...)
+stmt     = (return aexp)
+         | (print aexp)
+         | (print string)
+         | (set id aexp)
+         | (seq stmt ...)
+         | (iif bexp stmt stmt)
+         | (skip)
+         | (while bexp stmt ...)
 
 ```
 
 The grammar for A-PRIMPL is as follows:
 ```
-program	 	=	 	(stmt | value) ...
+program  = (stmt | value) ...
  	 	 	 	 
-  stmt	 	=	 	(halt)
-         |	 	(lit psymbol-or-value)
-         |	 	(const psymbol psymbol-or-value)
-         |	 	(data psymbol psymbol-or-value ...)
-         |	 	(data psymbol (nat psymbol-or-value))
-         |	 	(label psymbol)
-         |       (add dest opd opd)
-         |	 	(sub dest opd opd)
-         |	 	(mul dest opd opd)
-         |	 	(div dest opd opd)
-         |	 	(mod dest opd opd)
-         |	 	(gt dest opd opd)
-         |	 	(ge dest opd opd)
-         |	 	(lt dest opd opd)
-         |	 	(le dest opd opd)
-         |	 	(equal dest opd opd)
-         |	 	(not-equal dest opd opd)
-         |	 	(land dest opd opd)
-         |	 	(lor dest opd opd)
-         |	 	(lnot dest opd)
-         |	 	(jump opd)
-         |	 	(branch opd opd)
-         |	 	(move dest opd)
-         |	 	(print-val opd)
-         |	 	(print-string string)
+  stmt   = (halt)
+         | (lit psymbol-or-value)
+         | (const psymbol psymbol-or-value)
+         | (data psymbol psymbol-or-value ...)
+         | (data psymbol (nat psymbol-or-value))
+         | (label psymbol)
+         | (add dest opd opd)
+         | (sub dest opd opd)
+         | (mul dest opd opd)
+         | (div dest opd opd)
+         | (mod dest opd opd)
+         | (gt dest opd opd)
+         | (ge dest opd opd)
+         | (lt dest opd opd)
+         | (le dest opd opd)
+         | (equal dest opd opd)
+         | (not-equal dest opd opd)
+         | (land dest opd opd)
+         | (lor dest opd opd)
+         | (lnot dest opd)
+         | (jump opd)
+         | (branch opd opd)
+         | (move dest opd)
+         | (print-val opd)
+         | (print-string string)
  	 	 	 	 
-  opd	 	=	 	imm
-        |	 	ind
-        |	 	(imm ind)
+  opd    = imm
+         | ind
+         | (imm ind)
  	 	 	 	 
-  dest	 =	 	ind
- 	 	    |	 	(imm ind)
+  dest   = ind
+         | (imm ind)
  	 	 	 	 
-  imm	 	=	 	integer
- 	 	    |	 	boolean
+  imm    = integer
+         | boolean
  	 	 	 	 
-  ind	 	=	 	(nat)
+  ind.   = (nat)
 ```
 
-### Setup
+## Setup
 
 First, ensure that you have [Racket](https://download.racket-lang.org/racket-v8.1.html) installed (v8.1 was used to write these programs).
 
@@ -93,7 +93,7 @@ Next, provide the execute permission to the `compile` and `run` scripts by runni
 chmod u+x run compile
 ```
 
-### Usage
+## Usage
 
 Make sure you have followed the instructions in the setup section first.
 
