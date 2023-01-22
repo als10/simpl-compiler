@@ -1,0 +1,5 @@
+FILENAME=${1%.aprimp}
+TEMP=$(mktemp)
+echo "($(cat $1))" | racket ./assembler/runner.rkt > $TEMP
+echo "($(cat $TEMP))" | racket primpl-interpreter.rkt
+rm $TEMP

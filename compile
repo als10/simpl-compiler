@@ -1,0 +1,2 @@
+FILE=${1%.simpl}
+racket ./compiler/runner.rkt < "${FILE}.simpl" > "${FILE}.aprimp"

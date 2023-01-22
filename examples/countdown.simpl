@@ -1,0 +1,12 @@
+((fun (countdown n)
+   (vars [(result 0)]
+         (print n)
+         (print " ")
+         (iif (> n 0) 
+              (set result (countdown (- n 1))) 
+              (skip))
+         (return result)))
+
+ (fun (main)
+   (vars [(n 10)]
+         (return (countdown n)))))
