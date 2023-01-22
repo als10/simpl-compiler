@@ -11,33 +11,33 @@ program	 	=	 	function ...
 function	=	 	(fun (id id ...) (vars [(id int) ...] stmt ...))
  	 	 	 	 
 aexp	 	=	 	(id aexp ...)
-            |       (+ aexp aexp)
-            |	 	(* aexp aexp)
-            |	 	(- aexp aexp)
-            |	 	(div aexp aexp)
-            |	 	(mod aexp aexp)
-            |	 	number
-            |	 	id
+       |   (+ aexp aexp)
+       |	 	(* aexp aexp)
+       |	 	(- aexp aexp)
+       |	 	(div aexp aexp)
+       |	 	(mod aexp aexp)
+       |	 	number
+       |	 	id
  	 	 	 	 
 bexp	 	=	 	(= aexp aexp)
-            |	 	(> aexp aexp)
-            |	 	(< aexp aexp)
-            |	 	(>= aexp aexp)
-            |	 	(<= aexp aexp)
-            |	 	(not bexp)
-            |	 	(and bexp ...)
-            |	 	(or bexp ...)
-            |	 	true
-            |	 	false
+       |	 	(> aexp aexp)
+       |	 	(< aexp aexp)
+       |	 	(>= aexp aexp)
+       |	 	(<= aexp aexp)
+       |	 	(not bexp)
+       |	 	(and bexp ...)
+       |	 	(or bexp ...)
+       |	 	true
+       |	 	false
 
 stmt	 	=	 	(return aexp)
- 	 	    |	 	(print aexp)
- 	 	    |	 	(print string)
-            |       (set id aexp)
- 	 	    |	 	(seq stmt ...)
-            |   	(iif bexp stmt stmt)
-            |       (skip)
- 	 	    |	 	(while bexp stmt ...)
+       |	 	(print aexp)
+       |	 	(print string)
+       |   (set id aexp)
+       |	 	(seq stmt ...)
+       |   (iif bexp stmt stmt)
+       |   (skip)
+       |	 	(while bexp stmt ...)
 
 ```
 
@@ -46,36 +46,36 @@ The grammar for A-PRIMPL is as follows:
 program	 	=	 	(stmt | value) ...
  	 	 	 	 
   stmt	 	=	 	(halt)
-            |	 	(lit psymbol-or-value)
-            |	 	(const psymbol psymbol-or-value)
-            |	 	(data psymbol psymbol-or-value ...)
-            |	 	(data psymbol (nat psymbol-or-value))
-            |	 	(label psymbol)
-            |       (add dest opd opd)
-            |	 	(sub dest opd opd)
-            |	 	(mul dest opd opd)
-            |	 	(div dest opd opd)
-            |	 	(mod dest opd opd)
-            |	 	(gt dest opd opd)
-            |	 	(ge dest opd opd)
-            |	 	(lt dest opd opd)
-            |	 	(le dest opd opd)
-            |	 	(equal dest opd opd)
-            |	 	(not-equal dest opd opd)
-            |	 	(land dest opd opd)
-            |	 	(lor dest opd opd)
-            |	 	(lnot dest opd)
-            |	 	(jump opd)
-            |	 	(branch opd opd)
-            |	 	(move dest opd)
-            |	 	(print-val opd)
-            |	 	(print-string string)
+         |	 	(lit psymbol-or-value)
+         |	 	(const psymbol psymbol-or-value)
+         |	 	(data psymbol psymbol-or-value ...)
+         |	 	(data psymbol (nat psymbol-or-value))
+         |	 	(label psymbol)
+         |       (add dest opd opd)
+         |	 	(sub dest opd opd)
+         |	 	(mul dest opd opd)
+         |	 	(div dest opd opd)
+         |	 	(mod dest opd opd)
+         |	 	(gt dest opd opd)
+         |	 	(ge dest opd opd)
+         |	 	(lt dest opd opd)
+         |	 	(le dest opd opd)
+         |	 	(equal dest opd opd)
+         |	 	(not-equal dest opd opd)
+         |	 	(land dest opd opd)
+         |	 	(lor dest opd opd)
+         |	 	(lnot dest opd)
+         |	 	(jump opd)
+         |	 	(branch opd opd)
+         |	 	(move dest opd)
+         |	 	(print-val opd)
+         |	 	(print-string string)
  	 	 	 	 
   opd	 	=	 	imm
-            |	 	ind
-            |	 	(imm ind)
+        |	 	ind
+        |	 	(imm ind)
  	 	 	 	 
-  dest	 	=	 	ind
+  dest	 =	 	ind
  	 	    |	 	(imm ind)
  	 	 	 	 
   imm	 	=	 	integer
